@@ -1,0 +1,18 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80">
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#56C8FF"/>
+      <stop offset="100%" stop-color="#176BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="340" height="80" rx="14" fill="#071426"/>
+  <g transform="translate(15 12)">
+    <path d="M10 17 L10 47 Q10 52 15 52 H49 Q54 52 54 47 V17 Z" fill="url(#blue)"/>
+    <path d="M20 19 V13 Q20 4 32 4 Q44 4 44 13 V19" fill="none" stroke="#8DDCFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M39 22 L23 35 H34 L25 47 L44 32 H33 Z" fill="#FFFFFF"/>
+  </g>
+  <text x="82" y="49" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">Shop<tspan fill="#43B7FF">nix</tspan></text>
+  <circle cx="308" cy="25" r="3" fill="#43B7FF"/>
+  <circle cx="319" cy="25" r="3" fill="#176BFF"/>
+</svg>
