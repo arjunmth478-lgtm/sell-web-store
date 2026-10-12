@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061326">
+  <title>YourStore — Online Shopping</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="cartmark">🛒</span><span>Your<span>Store</span></span></a>
+    <div class="search"><input id="searchInput" type="search" placeholder="Search products, brands and more..."><button id="searchBtn" aria-label="Search">⌕</button></div>
+    <nav class="top-actions"><button class="text-btn" id="loginOpen">Login</button><button class="primary small" id="signupOpen">Sign Up</button></nav>
+  </header>
+  <nav class="categories" aria-label="Product categories">
+    <a href="#products">☰ All Categories</a><a href="#products" data-category="Electronics">Electronics</a><a href="#products" data-category="Fashion">Fashion</a><a href="#products" data-category="Home & Living">Home & Living</a><a href="#products" data-category="Beauty">Beauty</a><a href="#products" data-category="Sports">Sports</a><a href="#products" data-category="Toys">Toys</a><a href="#products">More⌄</a>
+  </nav>
+  <main>
+    <section class="hero" aria-label="Store banner">
+      <div class="hero-art left-art">🛍️<small>SHOP</small></div>
+      <div class="hero-copy">
+        <div class="hero-logo">🛒 <span>Your<span>Store</span></span></div>
+        <p class="tagline">Your Trusted Online Shopping Destination</p>
+        <div class="connected">Connected by <b class="meesho">Meesho</b>, <b class="amazon">Amazon</b>, <b class="flipkart">Flipkart</b> &amp; Many More!</div>
+        <div class="marketplaces"><span class="market meesho">meesho</span><span class="market amazon">amazon <i>⌣</i></span><span class="market flipkart">Flipkart 🛍</span><span class="market more">&amp; Many More!</span></div>
+        <div class="benefits"><span>◇ Wide Range<br>of Products</span><span>％ Best Prices<br>&amp; Offers</span><span>♢ Safe Shopping</span><span>↻ Easy Support</span></div>
+      </div>
+      <div class="hero-art right-art">📦<small>SHOP ANYTIME</small></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading"><h2>Shop by Category</h2><a href="#products">View all →</a></div>
+      <div class="category-grid" id="categoryGrid">
+        <button data-category="Electronics">🎧<span>Electronics</span></button>
+        <button data-category="Fashion">👕<span>Fashion</span></button>
+        <button data-category="Home & Living">🛋️<span>Home &amp; Living</span></button>
+        <button data-category="Beauty">🧴<span>Beauty</span></button>
+        <button data-category="Sports">🏀<span>Sports</span></button>
+        <button data-category="Toys">🧸<span>Toys</span></button>
+        <button data-category="Books">📘<span>Books</span></button>
+        <button data-category="Kitchen">🍳<span>Kitchen</span></button>
+        <button data-category="Footwear">👟<span>Footwear</span></button>
+        <button data-category="Accessories">⌚<span>Accessories</span></button>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading"><h2>Featured Products</h2><span id="productCount" class="muted"></span></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+    <section class="trust-row"><span>🛡️ Safe Shopping <small>Your order details stay private</small></span><span>🚚 Delivery Updates <small>Order tracking via seller</small></span><span>🏷️ Offers <small>Discover products and deals</small></span><span>🎧 Customer Support <small>We're here to help</small></span></section>
+  </main>
+  <footer><span>© <span id="year"></span> YourStore</span><span>Independent online store • Contact us for help</span><button id="adminOpen" class="footer-link">Admin</button></footer>
+
+  <dialog id="authDialog" class="modal">
+    <form method="dialog" class="modal-close"><button aria-label="Close">✕</button></form>
+    <h2 id="authTitle">Login</h2><p class="muted">Sign in to manage your account and orders.</p>
+    <form id="authForm">
+      <label>Name (for sign up)<input id="authName" placeholder="Your name"></label>
+      <label>Email<input id="authEmail" type="email" placeholder="you@example.com" required></label>
+      <label>Password<input id="authPassword" type="password" placeholder="At least 8 characters" minlength="8" required></label>
+      <button class="primary full" type="submit" id="authSubmit">Login</button>
+    </form>
+    <p id="authMessage" class="form-message"></p>
+    <p class="muted tiny">Demo only: this starter does not securely create accounts or store orders on a server.</p>
+  </dialog>
+
+  <dialog id="adminDialog" class="modal admin-modal">
+    <form method="dialog" class="modal-close"><button aria-label="Close">✕</button></form>
+    <h2>Admin Panel <span class="pill">Demo</span></h2>
+    <p class="muted">Local preview dashboard — connect a secure backend before publishing.</p>
+    <div class="stats">
+      <div><small>Product listings</small><strong id="statProducts">0</strong></div>
+      <div><small>Saved orders on this browser</small><strong id="statOrders">0</strong></div>
+      <div><small>Page views on this browser</small><strong id="statViews">0</strong></div>
+    </div>
+    <div class="admin-columns">
+      <form id="productForm" class="admin-form">
+        <h3>Add product</h3>
+        <label>Product name<input id="pName" required placeholder="e.g. Wireless Earbuds"></label>
+        <label>Price (₹)<input id="pPrice" required type="number" min="1" placeholder="1299"></label>
+        <label>Category<select id="pCategory"><option>Electronics</option><option>Fashion</option><option>Home & Living</option><option>Beauty</option><option>Sports</option><option>Toys</option><option>Books</option><option>Kitchen</option><option>Footwear</option><option>Accessories</option></select></label>
+        <label>Image URL<input id="pImage" placeholder="https://... (optional)"></label>
+        <label>Details<textarea id="pDetails" placeholder="Short product details"></textarea></label>
+        <button class="primary full" type="submit">Add product</button>
+      </form>
+      <div><h3>Manage products</h3><div id="adminProductList" class="admin-product-list"></div><button id="resetProducts" class="danger full" type="button">Reset demo products</button></div>
+    </div>
+    <p class="tiny muted">Important: products added here are saved only in this browser (localStorage), not for all visitors. Visitor count is also browser-local and is not a reliable total-visitor analytics system.</p>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
